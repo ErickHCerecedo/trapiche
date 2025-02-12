@@ -1,0 +1,48 @@
+.heroCarrusel {
+    @apply w-full;
+}
+
+.hero {
+    @apply h-auto;
+}
+
+.heroWrapper {
+    @apply mt-12 flex;
+}
+
+.heroInformation {
+    @apply w-1/3 py-4 pr-4 flex flex-col justify-start;
+}
+
+.heroButton {
+    @apply flex items-center mt-auto;
+}
+
+.heroButtonIcon {
+    @apply mx-2 transition-transform duration-500 ease-in-out transform;
+}
+
+.heroDetails {
+    @apply my-8 flex justify-start;
+}
+
+.heroImageContainer {
+    @apply w-2/3 h-[50vh] p-4 relative border-2 border-black cursor-pointer overflow-hidden;
+}
+
+.heroImage {
+    @apply transition-transform duration-500 ease-in-out transform;
+}
+
+.heroMobileWrapper {
+    @apply my-4;
+}
+
+.heroMobileImageContainer {
+    @apply w-full h-[30vh]  relative border-2 border-black;
+}
+
+.heroMobileInformation {
+    @apply w-full pt-4;
+}
+

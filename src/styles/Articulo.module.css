@@ -1,0 +1,40 @@
+.articulo{
+    @apply w-full;
+}
+
+.articuloHeader {
+    @apply flex flex-col items-start w-full md:w-[80%] mx-auto my-0;
+}
+
+.articuloDetails {
+    @apply md:flex justify-start w-full md:w-[80%] mx-auto my-10;
+}
+
+.articuloImageContainer {
+    @apply relative w-full md:w-[80%] h-[30vh] md:h-[60vh] mx-auto border-2 border-black;
+}
+
+.articuloImage {
+    @apply shadow-lg;
+}
+
+.articuloTitulo {
+    @apply text-3xl md:text-5xl my-4;
+}
+
+.articuloSubTitulo {
+    @apply text-2xl;
+}
+
+.articuloParagraph {
+    @apply w-full md:w-[80%] mx-auto my-8;
+}
+
+.articuloParagraph p{
+    @apply text-2xl leading-[2.3rem];
+}
+
+.articuloParagraph p::first-letter {
+    @apply text-8xl float-left mr-2 mt-[2px];
+}
+

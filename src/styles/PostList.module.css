@@ -1,0 +1,27 @@
+.postListWrapper {
+    @apply relative w-full my-8 md:my-16 md:flex justify-between;
+}
+
+.postListNews {
+    @apply w-full md:w-[70%] mt-12 md:mt-0; 
+}
+
+.postListMagazine{
+    @apply md:sticky w-full md:w-1/4  h-1/2 top-28;
+}
+
+.postListImageContainer {
+    @apply w-full relative border-2 border-black cursor-pointer overflow-hidden;
+}
+
+.postListImage {
+    @apply transition-transform duration-500 ease-in-out transform;
+}
+
+.postListButton {
+    @apply flex justify-center items-center w-full py-2 mt-4 bg-foreground text-white rounded-md;
+}
+
+.postListButtonIcon {
+    @apply mx-2 transition-transform duration-500 ease-in-out transform;
+}

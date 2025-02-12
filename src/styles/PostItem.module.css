@@ -1,0 +1,31 @@
+.postItem{
+    @apply h-auto;
+}
+
+.postItemWrapper {
+    @apply py-0 my-[4.4rem] md:flex;
+}
+
+.postItemImageContainer {
+    @apply w-full md:w-56 h-56 p-4 relative border-2 border-black overflow-hidden; 
+}
+
+.postItemImage {
+    @apply transition-transform duration-500 ease-in-out transform;
+}
+
+.postItemInformation {
+    @apply w-full md:w-3/4 h-auto md:h-56 pt-4 md:p-4 flex flex-col justify-start;
+}
+
+.postItemDetails {
+    @apply md:flex justify-start my-4;
+}
+
+.postItemButton {
+    @apply flex items-center mt-auto;
+}
+
+.postItemButtonIcon {
+    @apply mx-2 transition-transform duration-500 ease-in-out transform;
+}
