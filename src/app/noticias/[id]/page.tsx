@@ -5,23 +5,8 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image";
 import { FaLink } from "react-icons/fa6";
-//import { Metadata } from "next"/
+import type { Metadata, ResolvingMetadata } from "next"
 
-/* interface Post {
-    id_entrada: string;
-    titulo: string;
-    subtitulo: string;
-    portada: string;
-    contenido: string;
-    autor: string;
-    resumen: string;
-    created_at: string;
-    estado: number;
-} */
-
-/* interface PageProps {
-    params: { id: string };
-} */
 
 
 // Generar metadatos dinámicos para SEO
@@ -47,7 +32,38 @@ import { FaLink } from "react-icons/fa6";
       },
     };
 } */
-  
+
+export async function generateMetadata({
+    params,
+}:{
+    params: Promise<{ id: string }>
+}, parent: ResolvingMetadata
+): Promise<Metadata> {
+    const id = (await params).id
+    const data = await fetch(`https://api.trapichedigital.com.mx/api/api_post_read.php?id_entrada=${id}`)
+    const post = await data.json()
+    
+    // optionally access and extend (rather than replace) parent metadata
+    const previousImages = (await parent).openGraph?.images || []
+
+    return {
+        title: `${post.titulo} - Trapiche Digital`,
+        description: post.resumen || post.subtitulo,
+        openGraph: {
+            title: post.titulo,
+            description: post.resumen || post.subtitulo,
+            images: [post.portada, ...previousImages],
+            url: `https://trapichedigital.com.mx/noticias/${id}`,
+            type: "article",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.titulo,
+            description: post.resumen || post.subtitulo,
+            images: [post.portada],
+        },
+    };
+}
 
 export default async function Page({
     params,
