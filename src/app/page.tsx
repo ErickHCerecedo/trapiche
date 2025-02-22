@@ -1,12 +1,13 @@
 "use client"
 
 import React from 'react';
-import { redirect } from 'next/navigation';
+import Noticias from '@/app/noticias/page';
   
 
 const Home: React.FC = () => {
-    redirect('/noticias');
-    return null;
+    return (
+        <Noticias />
+    );
 }
 
 export default Home

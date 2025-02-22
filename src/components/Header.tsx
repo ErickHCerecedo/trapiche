@@ -9,10 +9,6 @@ import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 import { TfiAlignRight, TfiClose } from "react-icons/tfi"
 import styles from "@/styles/Header.module.css"
-import logo from "../../public/logo-main.png"
-import InstagramIcon from "../../public/instagram.svg"
-import YoutubeIcon from "../../public/youtube.svg"
-import FacebookIcon from "../../public/facebook.svg"
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -45,29 +41,29 @@ const Header: React.FC = () => {
             <div className={styles.headerWrapper}>
                 <div className={styles.headerNavbar}>
                     <div className="logo">
-                        <Image src={logo} alt="Trapiche" quality={80} className={styles.headerLogo}/>
+                        <Image src="/logo-main.png" width={200} height={100} quality={80} alt="Trapiche" className={styles.headerLogo} />
                     </div>
 
                     <div className={styles.headerList}>
-                        <button onClick={() => handleMenuClick('../')} className={`${styles.headerItem} group`}>
+                        <Link href="../" className={`${styles.headerItem} group`}>
                             Noticias
                             <span className={`${styles.headerItemHover} group-hover:w-full`}></span>
-                        </button>
-                        <button onClick={() => handleMenuClick('/revista')} className={`${styles.headerItem} group`}>
+                        </Link>
+                        <Link href="/revista" className={`${styles.headerItem} group`}>
                             Revista
                             <span className={`${styles.headerItemHover} group-hover:w-full`}></span>
-                        </button>
+                        </Link>
 
-                        <Separator orientation="vertical" className="h-9 w-[2px] mx-2 bg-foreground" />
+                        <Separator orientation="vertical" className="h-9 w-[2px] mx-2 bg-black" />
 
                         <Link href="https://www.instagram.com/trapichedigitalmx/" target="_blank" className="mx-2 group relative">
-                            <Image src={InstagramIcon} alt="Instagram" width={25} height={25} quality={80}/>
+                            <Image src="/instagram.svg" alt="Instagram" width={25} height={25} />
                         </Link>
                         <Link href="https://www.youtube.com/@trapichedigital3998" target="_blank" className="mx-2 group relative">
-                            <Image src={YoutubeIcon} alt="Instagram" width={25} height={25} quality={80}/>
+                            <Image src="/youtube.svg" alt="Youtube" width={25} height={25} />
                         </Link>
                         <Link href="https://www.facebook.com/Trapichedigitaloficial" target="_blank" className="mx-2 group relative">
-                            <Image src={FacebookIcon} alt="Instagram" width={25} height={25} quality={80}/>
+                            <Image src="/facebook.svg" alt="Facebook" width={25} height={25} />
                         </Link>
                     </div>
                     <div className={styles.menuButton}>
@@ -84,15 +80,15 @@ const Header: React.FC = () => {
                 <Separator orientation="horizontal" className="h-[2px] my-1"/>
                 <div className="">
                 <Link href="https://www.instagram.com/trapichedigitalmx/" target="_blank" className="w-full flex justify-start items-center my-4">
-                    <Image src={InstagramIcon} alt="Instagram" width={25} height={25} quality={80}/>
+                    <Image src="/instagram.svg" alt="Instagram" width={25} height={25} />
                     <span className="mx-1">Instagram</span>
                 </Link>
                 <Link href="https://www.youtube.com/@trapichedigital3998" target="_blank" className="w-full flex justify-start items-center my-4">
-                    <Image src={YoutubeIcon} alt="Instagram" width={25} height={25} quality={80}/>
+                    <Image src="/youtube.svg" alt="Youtube" width={25} height={25} />
                     <span className="mx-1">Youtube</span>
                 </Link>
                 <Link href="https://www.facebook.com/Trapichedigitaloficial" target="_blank" className="w-full flex justify-start items-center my-4">
-                    <Image src={FacebookIcon} alt="Instagram" width={25} height={25} quality={80}/>
+                    <Image src="/facebook.svg" alt="Facebook" width={25} height={25} />
                     <span className="mx-1">Facebook</span>
                 </Link>
                 </div>

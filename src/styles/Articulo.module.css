@@ -1,21 +1,25 @@
 .articulo{
-    @apply w-full;
+    @apply max-w-[70rem] h-auto mx-auto;
 }
 
 .articuloHeader {
-    @apply flex flex-col items-start w-full md:w-[80%] mx-auto my-0;
+    @apply flex flex-col items-start w-full mx-auto my-0;
 }
 
 .articuloDetails {
-    @apply md:flex justify-start w-full md:w-[80%] mx-auto my-10;
+    @apply md:flex justify-start w-full mx-auto my-5;
+}
+
+.articuloShare{
+    @apply flex justify-start w-full mx-auto mb-2;
 }
 
 .articuloImageContainer {
-    @apply relative w-full md:w-[80%] h-[30vh] md:h-[60vh] mx-auto border-2 border-black;
+    @apply relative w-full h-[30vh] md:h-[50vh] mx-auto border-2 border-black  shadow-lg my-10;
 }
 
 .articuloImage {
-    @apply shadow-lg;
+    @apply w-full h-full object-cover;
 }
 
 .articuloTitulo {
@@ -27,14 +31,18 @@
 }
 
 .articuloParagraph {
-    @apply w-full md:w-[80%] mx-auto my-8;
+    @apply w-full md:w-[80%] mx-auto my-10 mt-20;
 }
 
 .articuloParagraph p{
-    @apply text-2xl leading-[2.3rem];
+    @apply text-2xl leading-[2.3rem] mb-4;
 }
 
-.articuloParagraph p::first-letter {
-    @apply text-8xl float-left mr-2 mt-[2px];
+/* .articuloParagraph p::first-letter {
+    @apply font-bold;
+} */
+
+.articuloBtnShare {
+    @apply mr-4 flex;
 }
 

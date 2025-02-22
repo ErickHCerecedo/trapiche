@@ -1,5 +1,5 @@
 .header {
-    @apply h-20 md:h-28 w-screen fixed flex items-center justify-center top-0 z-50 bg-heroImage bg-repeat transition-all duration-75;
+    @apply h-20 md:h-28 w-screen fixed flex items-center justify-center top-0 z-50 /*bg-heroImage bg-repeat*/ bg-white transition-all duration-75; 
     background-size: 15%;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .headerItemHover{
-    @apply absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-foreground;
+    @apply absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black;
 }
 
 .menuButton {

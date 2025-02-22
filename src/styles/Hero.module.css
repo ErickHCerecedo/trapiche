@@ -27,7 +27,7 @@
 }
 
 .heroImageContainer {
-    @apply w-2/3 h-[50vh] p-4 relative border-2 border-black cursor-pointer overflow-hidden;
+    @apply w-2/3 h-[50vh]  relative border-2 border-black cursor-pointer overflow-hidden;
 }
 
 .heroImage {
@@ -39,7 +39,7 @@
 }
 
 .heroMobileImageContainer {
-    @apply w-full h-[30vh]  relative border-2 border-black;
+    @apply w-full h-[30vh] overflow-hidden relative border-2 border-black;
 }
 
 .heroMobileInformation {

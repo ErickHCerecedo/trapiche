@@ -19,7 +19,7 @@
 }
 
 .postListButton {
-    @apply flex justify-center items-center w-full py-2 mt-4 bg-foreground text-white rounded-md;
+    @apply flex justify-center items-center w-full py-2 mt-4 bg-black text-white rounded-md;
 }
 
 .postListButtonIcon {

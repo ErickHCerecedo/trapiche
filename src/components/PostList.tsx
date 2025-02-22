@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import Link from "next/link"
-import Image from "next/image"
+import Image from "next/image";
 import PostItem from "@/components/PostItem"
 
 import styles from "@/styles/PostList.module.css"
 import { GrLinkNext } from "react-icons/gr"
-import magazine from "../../public/magazine-holder.png"
 
 interface Post {
     id_entrada: string;
@@ -38,6 +37,8 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
         };
     }, []);
 
+    console.log("PostList: ", posts);
+
     return (
         <div>
             {isMobile ? (
@@ -46,19 +47,21 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                         <h2 className="text-5xl">Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
-                        <Link href="/revista">
+                        <Link href="/revista" scroll={false}>
                             <div className={`${styles.postListImageContainer} group`}>
                                 <Image
-                                    src={magazine}
+                                    src="/magazine-holder.png"
                                     alt="Revista"
-                                    quality={80}
-                                    style={{objectFit: "contain"}}
+                                    layout="responsive"
+                                    width={100}
+                                    height={100}
+                                    objectFit="contain"
                                     className={`${styles.postListImage} group-hover:scale-110`}
                                 />
                             </div>
                         </Link>
                         
-                        <Link href="/revista"  className={`${styles.postListButton} group`}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
+                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={false}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
                     </div>
                     
                     <div className={styles.postListNews}>
@@ -71,8 +74,8 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                                     subtitle={post.subtitulo}
                                     autor={post.autor}
                                     date={post.created_at}
-                                    image={post.portada}
-                                    //content={post.resumen}
+                                    image={post.portada}    
+                                    content={post.resumen}
                                 />
                             </div>
                         ))}
@@ -91,7 +94,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                                     autor={post.autor}
                                     date={post.created_at}
                                     image={post.portada}
-                                    //content={post.resumen}
+                                    content={post.resumen}
                                 />
                             </div>
                         ))}
@@ -101,19 +104,22 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                         <h2>Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
-                        <Link href="/revista">
-                            <div className={`${styles.postListImageContainer} group`}>
+                        <Link href="/revista" scroll={false}>
+                            <div className={`${styles.postListImageContainer} group`} >
                                 <Image
-                                    src={magazine}
+                                    src="/magazine-holder.png"
                                     alt="Revista"
+                                    layout="responsive"
+                                    width={100}
+                                    height={100}
                                     quality={80}
-                                    style={{objectFit: "contain"}}
+                                    objectFit="contain"
                                     className={`${styles.postListImage} group-hover:scale-110`}
                                 />
                             </div>
                         </Link>
                         
-                        <Link href="/revista"  className={`${styles.postListButton} group`}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
+                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={false}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
                     </div>
                 </div> 
             )}

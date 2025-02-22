@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+//import { usePathname } from "next/navigation";
 
 import Section from "@/components/Section"
 import PostList from "@/components/PostList"
@@ -25,11 +26,11 @@ const Noticias: React.FC = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch('https://trapichedigital.com.mx/api/api_post_index.php');
+                const response = await fetch('https://api.trapichedigital.com.mx/api/api_post_index.php');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                console.log(response);
+                //console.log(response);
                 
                 const data = await response.json();
                 const reversedData = data.reverse();

@@ -5,16 +5,16 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'picsum.photos',
+                hostname: 'api.trapichedigital.com.mx',
                 pathname: '/**',
             },
             {
                 protocol: 'https',
-                hostname: 'dummyimage-com.translate.goog',
+                hostname: 'trapichedigital.com.mx',
                 pathname: '/**',
             },
         ],
-    },
+    }
 }
 
 export default nextConfig
