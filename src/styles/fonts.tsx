@@ -1,4 +1,4 @@
-import { Bree_Serif, Roboto, Baskervville, Kaisei_Opti } from "next/font/google"
+import { Bree_Serif, Roboto, Kaisei_Opti } from "next/font/google"
 
 export const RobotoSans = Roboto({
     variable: "--font-main",
