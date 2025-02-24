@@ -1,13 +1,13 @@
 .postItem{
-    @apply h-auto;
+    @apply h-auto animate-fade ;
 }
 
 .postItemWrapper {
-    @apply py-0 my-[4.4rem] md:flex;
+    @apply py-0 my-[2rem] md:flex;
 }
 
 .postItemImageContainer {
-    @apply w-full md:w-60 h-60  relative border-2 border-black overflow-hidden; 
+    @apply w-full md:w-[30%] h-60 relative shadow-md overflow-hidden; 
 }
 
 .postItemImage {
@@ -15,7 +15,7 @@
 }
 
 .postItemInformation {
-    @apply w-full md:w-3/4 h-auto md:pt-0 pt-4 md:pl-4 flex flex-col justify-start;
+    @apply w-full md:w-[70%] h-auto md:pt-0 pt-4 md:pl-4 flex flex-col justify-start;
 }
 
 .postItemDetails {

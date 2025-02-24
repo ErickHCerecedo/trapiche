@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-//import { usePathname } from "next/navigation";
 
 import Section from "@/components/Section"
 import PostList from "@/components/PostList"
@@ -17,11 +16,15 @@ interface Post {
     created_at: string;
 }
 
-const Noticias: React.FC = () => {
+const Noticias: React.FC =  () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [heroPosts, setHeroPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    /* const data = await fetch('https://api.trapichedigital.com.mx/api/api_post_index.php');
+    const list = await data.json()
+    const reversedData = data.reverse(); */
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -61,7 +64,7 @@ const Noticias: React.FC = () => {
 
     return (
         <Section>
-            <h1 className="w-full text-5xl md:text-[6rem] text-center font-extrabold">La noticia en primera linea</h1>
+            <h1 className="w-full text-5xl md:text-[6rem] font-serif text-center font-semibold uppercase animate-fade-up animate-delay-500">La noticia en primera linea</h1>
             <Hero posts={heroPosts} />
             <PostList posts={posts} />
         </Section>

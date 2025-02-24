@@ -15,11 +15,11 @@
 }
 
 .articuloImageContainer {
-    @apply relative w-full h-[30vh] md:h-[50vh] mx-auto border-2 border-black  shadow-lg my-10;
+    @apply relative w-full h-auto mx-auto shadow-lg my-10;
 }
 
 .articuloImage {
-    @apply w-full h-full object-cover;
+    @apply w-full h-auto object-contain;
 }
 
 .articuloTitulo {

@@ -1,4 +1,4 @@
-import { Bree_Serif, Roboto, Baskervville } from "next/font/google"
+import { Bree_Serif, Roboto, Baskervville, Kaisei_Opti } from "next/font/google"
 
 export const RobotoSans = Roboto({
     variable: "--font-main",
@@ -6,9 +6,9 @@ export const RobotoSans = Roboto({
     subsets: ["latin"],
 })
 
-export const BenthamSerif = Baskervville({
+export const BenthamSerif = Kaisei_Opti({
     variable: "--font-titulos",
-    weight: ["400"],
+    weight: ["400", "500", "700"],
     subsets: ["latin"],
 })
 

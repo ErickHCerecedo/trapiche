@@ -4,34 +4,9 @@ import styles from "@/styles/Articulo.module.css"
 import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image";
-import { FaLink } from "react-icons/fa6";
+import { formatDate } from "@/lib/formatDate"
 import type { Metadata, ResolvingMetadata } from "next"
-
-
-
-// Generar metadatos dinámicos para SEO
-/* export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const post = await getPostData(params.id);
-    if (!post) return {};
-    
-    return {
-      title: `${post.titulo} - Trapiche Digital`,
-      description: post.resumen || post.subtitulo,
-      openGraph: {
-        title: post.titulo,
-        description: post.resumen || post.subtitulo,
-        images: [{ url: post.portada }],
-        url: `https://trapichedigital.com.mx/noticias/${params.id}`,
-        type: "article",
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: post.titulo,
-        description: post.resumen || post.subtitulo,
-        images: [post.portada],
-      },
-    };
-} */
+import CopyToClipboard from "@/components/CopyToClipboard"
 
 export async function generateMetadata({
     params,
@@ -43,7 +18,6 @@ export async function generateMetadata({
     const data = await fetch(`https://api.trapichedigital.com.mx/api/api_post_read.php?id_entrada=${id}`)
     const post = await data.json()
     
-    // optionally access and extend (rather than replace) parent metadata
     const previousImages = (await parent).openGraph?.images || []
 
     return {
@@ -71,24 +45,13 @@ export default async function Page({
     params: Promise<{ id: string }>
 }) {
     const id = (await params).id
-    console.log(id)
-    console.log(id)
+    
     const data = await fetch(`https://api.trapichedigital.com.mx/api/api_post_read.php?id_entrada=${id}`)
     const post = await data.json()
     
-    
-    //if (!post) notFound();
 
     const postUrl = `https://trapichedigital.com.mx/noticias/${id}`;
-
-    /* const copyToClipboard = () => {
-        navigator.clipboard.writeText(postUrl).then(() => {
-            alert("Enlace copiado al portapapeles");
-        }).catch(err => {
-            console.error("Error al copiar el enlace: ", err);
-        });
-    }; */
-
+    
     return (
         <Section>
             <Head>
@@ -123,8 +86,8 @@ export default async function Page({
                 </div>
 
                 <div className={styles.articuloDetails}>
-                    <p className="text-base text-gray-700"><span className="font-bold">Por:</span> {post.autor}</p>
-                    <p className="text-base md:ml-8 text-gray-700"><span className="font-bold">Fecha:</span> {post.created_at}</p>
+                    <p className="text-base text-zinc-400"><span className="">Por</span> {post.autor}</p>
+                    <p className="text-base md:ml-8 text-zinc-400"><span className=""></span> {formatDate(post.created_at)}</p>
                 </div>
 
                 <div className={styles.articuloShare}>
@@ -144,9 +107,7 @@ export default async function Page({
                         <Image src="/whatsapp.svg" alt="WhatsApp" width={25} height={25} />
                     </Link>
 
-                    {/* <button onClick={copyToClipboard} className={styles.articuloBtnShare}> */}
-                        <FaLink className="w-[25px] h-[25px]" />
-                    {/* </button> */}
+                    <CopyToClipboard postUrl={postUrl} />
                     
                 </div>
 

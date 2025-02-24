@@ -4,15 +4,14 @@
 
 @layer base {
     body {
-        @apply font-sans font-normal text-lg text-black bg-white /*bg-heroImage bg-repeat*/;
+        @apply font-sans font-normal text-lg text-black bg-white bg-heroImage bg-repeat;
         background-size: 10%;
     }
-    h1,
-    h2 {
-        @apply font-sans text-2xl md:text-3xl font-normal uppercase;
+    h1 {
+        @apply font-serif text-2xl md:text-3xl font-semibold normal-case;
     }
     h2 {
-        @apply text-xl md:text-xl font-light normal-case;
+        @apply font-sans text-xl md:text-xl font-light normal-case;
     }
     p {
         @apply font-sans text-lg font-normal;

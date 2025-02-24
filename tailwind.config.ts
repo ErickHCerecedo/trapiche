@@ -16,10 +16,10 @@ export default {
             },
             fontFamily: {
                 sans: ["var(--font-main)","Arial","Helvetica","sans-serif"],
-                serif: [ "Times New Roman", "serif"],
+                serif: [ "var(--font-titulos)", "Times New Roman", "serif"],
                 bree: ["var(--font-bree-serif)", "serif"],
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require('tailwindcss-animated')],
 } satisfies Config

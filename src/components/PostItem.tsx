@@ -31,8 +31,8 @@ const PostItem: React.FC<PostItemProps> = ({
     return ( 
         <div className={styles.postItem}>
             <div className={styles.postItemWrapper}>
-                <Link href={`/noticias/${id_entrada}`} scroll={false}>
-                    <div className={`${styles.postItemImageContainer} group`}>
+                <div className={`${styles.postItemImageContainer} group`}>
+                    <Link href={`/noticias/${id_entrada}`} scroll={true}>
                         <Image
                             src={image}
                             alt={title}
@@ -43,20 +43,20 @@ const PostItem: React.FC<PostItemProps> = ({
                             className={`${styles.postItemImage} group-hover:scale-110`}
                             style={{ objectFit: "cover", width: "100%", height: "100%" }}
                         />
-                    </div>
-                </Link>
-
+                    </Link>
+                </div>
+                
                 <div className={styles.postItemInformation}>
-                    <Link href={`/noticias/${id_entrada}`} scroll={false}>
+                    <Link href={`/noticias/${id_entrada}`} scroll={true}>
                         <h1>{title}</h1>
                     </Link>
                     <h2>{subtitle}</h2>
                     <div className={styles.postItemDetails}>
-                        <p className="text-sm"><span className="font-bold">Por. </span> {autor}</p>
-                        <p className="text-sm md:mx-4"><span className="font-bold">Fecha. </span> {formatDate(date)}</p>
+                        <p className="text-sm text-zinc-500"><span className="">Por </span> {autor}</p>
+                        <p className="text-sm md:mx-4 text-zinc-500"><span className=""></span> {formatDate(date)}</p>
                     </div>
                     <p className="hidden">{content}</p>
-                    <Link href={`/noticias/${id_entrada}`}  className={`${styles.postItemButton} group`} scroll={false}>Leer <GrLinkNext className={`${styles.postItemButtonIcon} group-hover:translate-x-4`}/></Link>
+                    <Link href={`/noticias/${id_entrada}`}  className={`${styles.postItemButton} group`} scroll={true}>Leer <GrLinkNext className={`${styles.postItemButtonIcon} group-hover:translate-x-4`}/></Link>
                 </div>
             </div>
         <Separator orientation="horizontal" className="h-[1px] my-0 bg-black"/>

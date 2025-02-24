@@ -37,8 +37,6 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
         };
     }, []);
 
-    console.log("PostList: ", posts);
-
     return (
         <div>
             {isMobile ? (
@@ -47,7 +45,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                         <h2 className="text-5xl">Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
-                        <Link href="/revista" scroll={false}>
+                        <Link href="/revista" scroll={true}>
                             <div className={`${styles.postListImageContainer} group`}>
                                 <Image
                                     src="/magazine-holder.png"
@@ -61,7 +59,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                             </div>
                         </Link>
                         
-                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={false}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
+                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={true}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
                     </div>
                     
                     <div className={styles.postListNews}>
@@ -85,6 +83,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                 <div className={styles.postListWrapper}>
                     <div className={styles.postListNews}>
                         <h2>Noticias Recientes</h2>
+                        <h1 className='my-4'></h1>
                         {posts.map((post, index) => (
                             <div key={index} >
                                 <PostItem
@@ -104,7 +103,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                         <h2>Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
-                        <Link href="/revista" scroll={false}>
+                        <Link href="/revista" scroll={true}>
                             <div className={`${styles.postListImageContainer} group`} >
                                 <Image
                                     src="/magazine-holder.png"
@@ -119,7 +118,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                             </div>
                         </Link>
                         
-                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={false}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
+                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={true}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
                     </div>
                 </div> 
             )}

@@ -1,5 +1,5 @@
 .heroCarrusel {
-    @apply w-full;
+    @apply w-full animate-fade;
 }
 
 .hero {
@@ -7,7 +7,7 @@
 }
 
 .heroWrapper {
-    @apply mt-12 flex;
+    @apply mt-12 flex p-5;
 }
 
 .heroInformation {
@@ -27,11 +27,11 @@
 }
 
 .heroImageContainer {
-    @apply w-2/3 h-[50vh]  relative border-2 border-black cursor-pointer overflow-hidden;
+    @apply w-2/3 h-[50vh] relative cursor-pointer overflow-hidden shadow-md;
 }
 
 .heroImage {
-    @apply transition-transform duration-500 ease-in-out transform;
+    @apply transition-transform w-full h-full duration-500 ease-in-out transform;
 }
 
 .heroMobileWrapper {
@@ -39,7 +39,7 @@
 }
 
 .heroMobileImageContainer {
-    @apply w-full h-[30vh] overflow-hidden relative border-2 border-black;
+    @apply w-full h-[30vh] overflow-hidden relative;
 }
 
 .heroMobileInformation {
