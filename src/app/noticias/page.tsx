@@ -64,7 +64,7 @@ const Noticias: React.FC =  () => {
 
     return (
         <Section>
-            <h1 className="w-full text-5xl md:text-[6rem] font-serif text-center font-semibold uppercase animate-fade-up animate-delay-500">La noticia en primera linea</h1>
+            <h1 className="w-full text-5xl md:text-[6rem] font-serif text-center font-semibold uppercase animate-fade-up animate-delay-500">Esencia Informativa</h1>
             <Hero posts={heroPosts} />
             <PostList posts={posts} />
         </Section>
