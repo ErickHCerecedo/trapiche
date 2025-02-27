@@ -98,9 +98,9 @@ export default async function Page({
                     </Link>
 
                     {/* Instagram (No permite compartir enlaces, redirecciona al perfil) */}
-                    <Link href="https://www.instagram.com/trapichedigital" target="_blank" rel="noopener noreferrer" className={styles.articuloBtnShare}>
+                    {/* <Link href="https://www.instagram.com/trapichedigitalmx" target="_blank" rel="noopener noreferrer" className={styles.articuloBtnShare}>
                         <Image src="/instagram.svg" alt="Instagram" width={25} height={25} />
-                    </Link>
+                    </Link> */}
 
                     {/* WhatsApp */}
                     <Link href={`https://api.whatsapp.com/send?text=${encodeURIComponent(post.titulo + " " + postUrl)}`} target="_blank" rel="noopener noreferrer" className={styles.articuloBtnShare}>
