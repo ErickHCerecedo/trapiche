@@ -11,15 +11,15 @@
 }
 
 .postListImageContainer {
-    @apply w-full relative border-2 border-black cursor-pointer overflow-hidden;
+    @apply w-full relative shadow-md cursor-pointer overflow-hidden;
 }
 
 .postListImage {
-    @apply transition-transform duration-500 ease-in-out transform;
+    @apply w-full transition-transform duration-500 ease-in-out transform object-cover;
 }
 
 .postListButton {
-    @apply flex justify-center items-center w-full py-2 mt-4 bg-black text-white rounded-md;
+    @apply flex justify-center items-center w-full py-2 mt-8 bg-black text-white rounded-md;
 }
 
 .postListButtonIcon {

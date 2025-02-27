@@ -1,9 +1,6 @@
-"use client"
-
-import React, { useState, useEffect } from 'react';
-
-import Section from "@/components/Section"
-import PostList from "@/components/PostList"
+import React from 'react';
+import Section from "@/components/Section";
+import PostList from "@/components/PostList";
 import Hero from '@/components/Hero';
 
 interface Post {
@@ -16,51 +13,22 @@ interface Post {
     created_at: string;
 }
 
-const Noticias: React.FC =  () => {
-    const [posts, setPosts] = useState<Post[]>([]);
-    const [heroPosts, setHeroPosts] = useState<Post[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+interface NoticiasProps {
+    heroPosts: Post[];
+    posts: Post[];
+}
 
-    /* const data = await fetch('https://api.trapichedigital.com.mx/api/api_post_index.php');
-    const list = await data.json()
-    const reversedData = data.reverse(); */
+async function fetchPosts() {
+    const response = await fetch('https://api.trapichedigital.com.mx/api/api_post_index.php');
+    const list = await response.json();
+    const reversedData = list.reverse();
+    const heroPosts = reversedData.slice(0, 3);
+    const posts = reversedData.slice(3);
+    return { heroPosts, posts };
+}
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await fetch('https://api.trapichedigital.com.mx/api/api_post_index.php');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                //console.log(response);
-                
-                const data = await response.json();
-                const reversedData = data.reverse();
-                setHeroPosts(reversedData.slice(0, 3));
-                setPosts(reversedData.slice(3));
-            } catch (error) {
-                if (error instanceof Error) {
-                    setError(error.message);
-                } else {
-                    setError(String(error));
-                }
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchPosts();
-    }, []);
-
-    if (loading) {
-        return <div className='w-screen h-screen flex justify-center items-center'>Loading...</div>;
-    } 
-    
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
-
+const Noticias: React.FC<NoticiasProps> = async () => {
+    const { heroPosts, posts } = await fetchPosts();
 
     return (
         <Section>
@@ -68,7 +36,7 @@ const Noticias: React.FC =  () => {
             <Hero posts={heroPosts} />
             <PostList posts={posts} />
         </Section>
-    )
+    );
 }
 
-export default Noticias
+export default Noticias;

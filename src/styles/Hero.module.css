@@ -31,7 +31,7 @@
 }
 
 .heroImage {
-    @apply transition-transform w-full h-full duration-500 ease-in-out transform;
+    @apply transition-transform w-full h-full duration-500 ease-in-out transform object-cover;
 }
 
 .heroMobileWrapper {

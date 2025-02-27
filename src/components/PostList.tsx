@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from "react";
 
 import Link from "next/link"
@@ -50,10 +52,9 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                                 <Image
                                     src="/magazine-holder.png"
                                     alt="Revista"
-                                    layout="responsive"
-                                    width={100}
+                                    width={200}
                                     height={100}
-                                    objectFit="contain"
+                                    quality={80}
                                     className={`${styles.postListImage} group-hover:scale-110`}
                                 />
                             </div>
@@ -108,11 +109,9 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                                 <Image
                                     src="/magazine-holder.png"
                                     alt="Revista"
-                                    layout="responsive"
-                                    width={100}
+                                    width={200}
                                     height={100}
                                     quality={80}
-                                    objectFit="contain"
                                     className={`${styles.postListImage} group-hover:scale-110`}
                                 />
                             </div>

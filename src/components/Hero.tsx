@@ -75,8 +75,6 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                                 width={500}
                                                 height={500}
                                                 className={`${styles.heroImage} group-hover:scale-110`}
-                                                style={{ objectFit: "cover" }}
-                                                //layout="fill"
                                             />
                                         </div>
                                     </Link>
@@ -116,8 +114,6 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                                 width={500}
                                                 height={500}
                                                 className={`${styles.heroImage} group-hover:scale-110`}
-                                                style={{ objectFit: "cover" }}
-                                                //layout="fill"
                                             />
                                             </Link>
                                         </div> 

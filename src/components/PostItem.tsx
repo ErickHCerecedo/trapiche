@@ -36,12 +36,10 @@ const PostItem: React.FC<PostItemProps> = ({
                         <Image
                             src={image}
                             alt={title}
-                            width={100}
+                            width={200}
                             height={100}
-                            quality={100}
-                            objectFit="contain"
+                            quality={80}
                             className={`${styles.postItemImage} group-hover:scale-110`}
-                            style={{ objectFit: "cover", width: "100%", height: "100%" }}
                         />
                     </Link>
                 </div>
