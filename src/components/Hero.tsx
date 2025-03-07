@@ -67,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                         {isMobile ? (
                             <div className={styles.hero}>
                                 <div className={styles.heroMobileWrapper}>
-                                    <Link href={`/noticias/${post.id_entrada}`} scroll = {true}>
+                                    <Link href={`/${post.id_entrada}`} scroll = {true}>
                                         <div className={`${styles.heroMobileImageContainer} group`}>
                                             <Image
                                                 src={post.portada}
@@ -80,14 +80,14 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                     </Link>
 
                                     <div className={styles.heroMobileInformation}>
-                                        <Link href={`/noticias/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
-                                        <Link href={`/noticias/${post.id_entrada}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
+                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
+                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
                                         <div className='my-4'>
                                             <p className='text-sm text-zinc-500'><span className=''>Por </span> {post.autor}</p>
                                             <p className='text-sm text-zinc-500'><span className=''></span> {formatDate(post.created_at)}</p>
                                         </div>
                                         {post.resumen}
-                                        <Link href={`/noticias/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                     </div>
                                 </div>
                             </div>           
@@ -95,19 +95,19 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                             <div className={styles.hero}>
                                 <div className={styles.heroWrapper}>
                                     <div className={styles.heroInformation}>
-                                        <Link href={`/noticias/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
-                                        <Link href={`/noticias/${post.id_entrada}`} scroll = {true}><h2 className='mt-4'>{post.subtitulo}</h2></Link>
+                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
+                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h2 className='mt-4'>{post.subtitulo}</h2></Link>
                                         <div className={styles.heroDetails}>
                                             <p className='text-sm mr-4 text-zinc-500'><span className=''>Por</span> {post.autor}</p>
                                             <p className='text-sm text-zinc-500'><span className=''> </span> {formatDate(post.created_at)}</p>
                                         </div>
                                         {post.resumen}
-                                        <Link href={`/noticias/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                     </div>
 
                                     
                                         <div className={`${styles.heroImageContainer} group`}>
-                                            <Link href={`/noticias/${post.id_entrada}`} scroll = {true}>
+                                            <Link href={`/${post.id_entrada}`} scroll = {true}>
                                             <Image
                                                 src={post.portada}
                                                 alt={post.titulo}

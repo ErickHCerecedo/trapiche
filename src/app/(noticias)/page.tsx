@@ -27,7 +27,7 @@ async function fetchPosts() {
     return { heroPosts, posts };
 }
 
-const Noticias: React.FC<NoticiasProps> = async () => {
+const Home: React.FC<NoticiasProps> = async () => {
     const { heroPosts, posts } = await fetchPosts();
 
     return (
@@ -39,4 +39,4 @@ const Noticias: React.FC<NoticiasProps> = async () => {
     );
 }
 
-export default Noticias;
+export default Home;

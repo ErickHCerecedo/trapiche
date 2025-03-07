@@ -32,7 +32,7 @@ const PostItem: React.FC<PostItemProps> = ({
         <div className={styles.postItem}>
             <div className={styles.postItemWrapper}>
                 <div className={`${styles.postItemImageContainer} group`}>
-                    <Link href={`/noticias/${id_entrada}`} scroll={true}>
+                    <Link href={`/${id_entrada}`} scroll={true}>
                         <Image
                             src={image}
                             alt={title}
@@ -45,7 +45,7 @@ const PostItem: React.FC<PostItemProps> = ({
                 </div>
                 
                 <div className={styles.postItemInformation}>
-                    <Link href={`/noticias/${id_entrada}`} scroll={true}>
+                    <Link href={`/${id_entrada}`} scroll={true}>
                         <h1>{title}</h1>
                     </Link>
                     <h2>{subtitle}</h2>
@@ -54,7 +54,7 @@ const PostItem: React.FC<PostItemProps> = ({
                         <p className="text-sm md:mx-4 text-zinc-500"><span className=""></span> {formatDate(date)}</p>
                     </div>
                     <p className="hidden">{content}</p>
-                    <Link href={`/noticias/${id_entrada}`}  className={`${styles.postItemButton} group`} scroll={true}>Leer <GrLinkNext className={`${styles.postItemButtonIcon} group-hover:translate-x-4`}/></Link>
+                    <Link href={`/${id_entrada}`}  className={`${styles.postItemButton} group`} scroll={true}>Leer <GrLinkNext className={`${styles.postItemButtonIcon} group-hover:translate-x-4`}/></Link>
                 </div>
             </div>
         <Separator orientation="horizontal" className="h-[1px] my-0 bg-black"/>
