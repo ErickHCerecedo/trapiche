@@ -1,12 +1,10 @@
-import { LoginForm } from "@/components/login-form"
+import { LoginForm } from "@/components/LoginForm"
 
-export default function Page() {
+export default function LoginPage() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+    <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10">
       <div className="w-full max-w-sm">
-      josemaen@trapichedigital.com.mx
-      adminTrapiche2025
-        <LoginForm className=""/>
+        <LoginForm />
       </div>
     </div>
   )

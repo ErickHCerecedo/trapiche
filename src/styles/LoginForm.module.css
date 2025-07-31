@@ -1,0 +1,15 @@
+.loginFormLogo {
+    @apply transition-all duration-300 ease-in-out w-52 md:w-64;
+}	
+
+.loginFormLabel {
+    @apply text-lg font-normal;
+}
+
+.loginFormInput {
+    @apply text-lg font-normal;
+}
+
+.loginFormButton {
+    @apply text-lg font-light;
+}

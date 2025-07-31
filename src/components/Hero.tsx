@@ -86,7 +86,7 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                             <p className='text-sm text-zinc-500'><span className=''>Por </span> {post.autor}</p>
                                             <p className='text-sm text-zinc-500'><span className=''></span> {formatDate(post.created_at)}</p>
                                         </div>
-                                        {post.resumen}
+                                        {/*post.resumen*/}
                                         <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                     </div>
                                 </div>
@@ -97,26 +97,28 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                     <div className={styles.heroInformation}>
                                         <Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
                                         <Link href={`/${post.id_entrada}`} scroll = {true}><h2 className='mt-4'>{post.subtitulo}</h2></Link>
+                                        
+                                        {/*post.resumen*/}
                                         <div className={styles.heroDetails}>
-                                            <p className='text-sm mr-4 text-zinc-500'><span className=''>Por</span> {post.autor}</p>
-                                            <p className='text-sm text-zinc-500'><span className=''> </span> {formatDate(post.created_at)}</p>
+                                            <p className='text-base mr-4 text-zinc-500'><span className=''>Por</span> {post.autor}</p>
+                                            <p className='text-base text-zinc-500'><span className=''> </span> {formatDate(post.created_at)}</p>
                                         </div>
-                                        {post.resumen}
                                         <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        
                                     </div>
 
                                     
-                                        <div className={`${styles.heroImageContainer} group`}>
-                                            <Link href={`/${post.id_entrada}`} scroll = {true}>
-                                            <Image
-                                                src={post.portada}
-                                                alt={post.titulo}
-                                                width={500}
-                                                height={500}
-                                                className={`${styles.heroImage} group-hover:scale-110`}
-                                            />
-                                            </Link>
-                                        </div> 
+                                    <div className={`${styles.heroImageContainer} group`}>
+                                        <Link href={`/${post.id_entrada}`} scroll = {true}>
+                                        <Image
+                                            src={post.portada}
+                                            alt={post.titulo}
+                                            width={500}
+                                            height={500}
+                                            className={`${styles.heroImage} group-hover:scale-110`}
+                                        />
+                                        </Link>
+                                    </div> 
                                 </div> 
                             </div>
                         )}

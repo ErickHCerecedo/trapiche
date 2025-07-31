@@ -83,7 +83,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
             ):(      
                 <div className={styles.postListWrapper}>
                     <div className={styles.postListNews}>
-                        <h2>Noticias Recientes</h2>
+                        <h2 className="text-4xl">Noticias Recientes</h2>
                         <h1 className='my-4'></h1>
                         {posts.map((post, index) => (
                             <div key={index} >
@@ -101,7 +101,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                     </div>
 
                     <div className={styles.postListMagazine}>
-                        <h2>Revista</h2>
+                        <h2 className="text-4xl">Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
                         <Link href="/revista" scroll={true}>

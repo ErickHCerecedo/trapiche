@@ -37,7 +37,7 @@ const PostItem: React.FC<PostItemProps> = ({
                             src={image}
                             alt={title}
                             width={200}
-                            height={100}
+                            height={200}
                             quality={80}
                             className={`${styles.postItemImage} group-hover:scale-110`}
                         />
@@ -50,8 +50,8 @@ const PostItem: React.FC<PostItemProps> = ({
                     </Link>
                     <h2>{subtitle}</h2>
                     <div className={styles.postItemDetails}>
-                        <p className="text-sm text-zinc-500"><span className="">Por </span> {autor}</p>
-                        <p className="text-sm md:mx-4 text-zinc-500"><span className=""></span> {formatDate(date)}</p>
+                        <p className="text-base text-zinc-500"><span className="">Por </span> {autor}</p>
+                        <p className="text-base md:mx-4 text-zinc-500"><span className=""></span> {formatDate(date)}</p>
                     </div>
                     <p className="hidden">{content}</p>
                     <Link href={`/${id_entrada}`}  className={`${styles.postItemButton} group`} scroll={true}>Leer <GrLinkNext className={`${styles.postItemButtonIcon} group-hover:translate-x-4`}/></Link>

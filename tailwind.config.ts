@@ -9,17 +9,45 @@ export default {
         "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {
-            backgroundImage: {
-                heroImage: "url('/bg.png')",
-                linearGradient: "linear-gradient(to left, white, black)",
+    	extend: {
+    		backgroundImage: {
+    			heroImage: "url('/bg.png')",
+    			linearGradient: 'linear-gradient(to left, white, black)'
+    		},
+    		fontFamily: {
+    			sans: [
+    				'var(--font-main)',
+    				'Arial',
+    				'Helvetica',
+    				'sans-serif'
+    			],
+    			serif: [
+    				'var(--font-titulos)',
+    				'Times New Roman',
+    				'serif'
+    			],
+    			bree: [
+    				'var(--font-bree-serif)',
+    				'serif'
+    			]
+    		},
+            screens: {
+                xl: '1280px', // Define el punto de quiebre para xl
+                '5xl': '1920px', // Define el punto de quiebre para 5xl
             },
-            fontFamily: {
-                sans: ["var(--font-main)","Arial","Helvetica","sans-serif"],
-                serif: [ "var(--font-titulos)", "Times New Roman", "serif"],
-                bree: ["var(--font-bree-serif)", "serif"],
-            },
-        },
+    		colors: {
+    			sidebar: {
+    				DEFAULT: 'hsl(var(--sidebar-background))',
+    				foreground: 'hsl(var(--sidebar-foreground))',
+    				primary: 'hsl(var(--sidebar-primary))',
+    				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+    				accent: 'hsl(var(--sidebar-accent))',
+    				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+    				border: 'hsl(var(--sidebar-border))',
+    				ring: 'hsl(var(--sidebar-ring))'
+    			}
+    		}
+    	}
     },
     plugins: [require('tailwindcss-animated')],
 } satisfies Config

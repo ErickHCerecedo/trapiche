@@ -3,19 +3,19 @@ import Section from "@/components/Section"
 import styles from "@/styles/Articulo.module.css"
 import Head from "next/head"
 import Link from "next/link"
-import Image from "next/image";
+import Image from "next/image"
 import { formatDate } from "@/lib/formatDate"
 import type { Metadata, ResolvingMetadata } from "next"
 import CopyToClipboard from "@/components/CopyToClipboard"
+import { API_ENDPOINTS } from "@/lib/api"
 
 export async function generateMetadata({
     params,
 }:{
     params: Promise<{ id: string }>
-}, parent: ResolvingMetadata
-): Promise<Metadata> {
+}, parent: ResolvingMetadata): Promise<Metadata> {
     const id = (await params).id
-    const data = await fetch(`https://api.trapichedigital.com.mx/api/api_post_read.php?id_entrada=${id}`)
+    const data = await fetch(API_ENDPOINTS.fetchPostById(id));
     const post = await data.json()
     
     const previousImages = (await parent).openGraph?.images || []
@@ -56,27 +56,31 @@ export default async function Page({
         <Section>
             <Head>
                 {/* Metadatos Open Graph para Facebook e Instagram */}
-                <meta property="og:title" content={post.titulo} />
-                <meta property="og:description" content={post.resumen || post.subtitulo} />
-                <meta property="og:image" content={post.portada} />
-                <meta property="og:url" content={postUrl} />
-                <meta property="og:type" content="article" />
-                <meta property="og:site_name" content="Trapiche Digital" />
-                <meta property="og:locale" content="es_ES" />
+                {post && (
+                    <>
+                        <meta property="og:title" content={post.titulo} />
+                        <meta property="og:description" content={post.resumen || post.subtitulo} />
+                        <meta property="og:image" content={post.portada} />
+                        <meta property="og:url" content={postUrl} />
+                        <meta property="og:type" content="article" />
+                        <meta property="og:site_name" content="Trapiche Digital" />
+                        <meta property="og:locale" content="es_ES" />
 
-                {/* Twitter/X Cards */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={post.titulo} />
-                <meta name="twitter:description" content={post.resumen || post.subtitulo} />
-                <meta name="twitter:image" content={post.portada} />
-                <meta name="twitter:url" content={postUrl} />
+                        {/* Twitter/X Cards */}
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:title" content={post.titulo} />
+                        <meta name="twitter:description" content={post.resumen || post.subtitulo} />
+                        <meta name="twitter:image" content={post.portada} />
+                        <meta name="twitter:url" content={postUrl} />
 
-                {/* YouTube metadatos (para contenido multimedia) */}
-                <meta name="video" content={post.portada} />
-                <meta name="video:type" content="video/mp4" />
-                <meta name="video:tag" content="noticias, actualidad, digital" />
+                        {/* YouTube metadatos (para contenido multimedia) */}
+                        <meta name="video" content={post.portada} />
+                        <meta name="video:type" content="video/mp4" />
+                        <meta name="video:tag" content="noticias, actualidad, digital" />
 
-                <title>{post.titulo} - Trapiche Digital</title>
+                        <title>{post.titulo} - Trapiche Digital</title>
+                    </>
+                )}
             </Head>
 
             <div className={styles.articulo}>

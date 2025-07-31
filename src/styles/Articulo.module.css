@@ -34,9 +34,9 @@
     @apply w-full md:w-[80%] mx-auto my-10 mt-20;
 }
 
-.articuloParagraph p{
+/* .articuloParagraph p{
     @apply text-2xl leading-[2.3rem] mb-4;
-}
+} */
 
 /* .articuloParagraph p::first-letter {
     @apply font-bold;
