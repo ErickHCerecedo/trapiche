@@ -1,5 +1,5 @@
 .header {
-    @apply h-20 md:h-28 w-screen fixed flex items-center justify-center top-0 z-50 bg-heroImage bg-repeat /* bg-white */ transition-all duration-75; 
+    @apply h-20 md:h-28 w-screen fixed flex items-center justify-center top-0 z-50 bg-heroImage bg-repeat /* bg-white */ transition-all duration-75;
     background-size: 15%;
 }
 
@@ -19,12 +19,12 @@
 .headerList {
     @apply hidden md:flex items-center justify-between;
 }
- 
+
 .headerItem {
     @apply mx-4 relative;
 }
 
-.headerItemHover{
+.headerItemHover {
     @apply absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .mobileMenu {
-    @apply  absolute bg-transparent bg-opacity-100 backdrop-blur-md z-40 w-full top-20 md:top-28 left-0 px-10 py-4 flex flex-col md:hidden overflow-hidden transition-all duration-300 ease-in-out;
+    @apply absolute bg-transparent bg-opacity-100 backdrop-blur-md z-40 w-full top-20 md:top-28 left-0 px-10 py-4 flex flex-col md:hidden overflow-hidden transition-all duration-300 ease-in-out;
 }
 
 .overlay {

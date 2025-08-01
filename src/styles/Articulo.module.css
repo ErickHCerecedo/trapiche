@@ -1,4 +1,4 @@
-.articulo{
+.articulo {
     @apply max-w-[70rem] h-auto mx-auto;
 }
 
@@ -10,7 +10,7 @@
     @apply md:flex justify-start w-full mx-auto my-5;
 }
 
-.articuloShare{
+.articuloShare {
     @apply flex justify-start w-full mx-auto mb-2;
 }
 
@@ -45,4 +45,3 @@
 .articuloBtnShare {
     @apply mr-4 flex;
 }
-

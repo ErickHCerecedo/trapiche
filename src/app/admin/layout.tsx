@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
 export default function RootLayout({
     children,
 }: Readonly<{
-    children: React.ReactNode;
+    children: React.ReactNode
 }>) {
     return (
         <>
-        {/* <SessionProvider> */}
+            {/* <SessionProvider> */}
             {children}
-        {/* </SessionProvider> */}     
+            {/* </SessionProvider> */}
         </>
     )
 }

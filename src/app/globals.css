@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        --font-main: ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+            "Noto Sans", sans-serif;
+        --font-titulos: ui-serif, Georgia, Cambria, "Times New Roman", Times,
+            serif;
+        --font-bree-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times,
+            serif;
+    }
+
     body {
         @apply font-sans font-normal text-xl text-black bg-white bg-heroImage bg-repeat;
         background-size: 10%;
@@ -10,7 +20,7 @@
     h1 {
         @apply font-serif text-2xl md:text-4xl font-semibold normal-case;
     }
-    h1 span{
+    h1 span {
         @apply font-sans font-medium;
     }
     h2 {
