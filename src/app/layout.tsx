@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 //import Header from "@/components/Header"
 //import Footer from "@/components/Footer"
 
-import { breeSerif, RobotoSans, BenthamSerif } from "@/styles/fonts"
+import { BenthamSerif, breeSerif, RobotoSans } from "@/styles/fonts"
 
 import "@/app/globals.css"
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     icons: {
         icon: "/icon.png",
         apple: "/apple-icon.png",
-    }
+    },
 }
 
 export default function RootLayout({
@@ -23,9 +23,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${RobotoSans.variable} ${BenthamSerif.variable} ${breeSerif.variable} antialiased`}>
+            <body
+                className={`${RobotoSans.variable} ${BenthamSerif.variable} ${breeSerif.variable} antialiased`}
+            >
                 {/* <Header /> */}
-                    {children}
+                {children}
                 {/* <Footer /> */}
             </body>
         </html>

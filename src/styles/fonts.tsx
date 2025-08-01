@@ -1,19 +1,15 @@
-import { Bree_Serif, Roboto, Kaisei_Opti } from "next/font/google"
-
-export const RobotoSans = Roboto({
+// Using system fonts instead of Google Fonts to avoid network issues
+export const RobotoSans = {
     variable: "--font-main",
-    weight: ["400"],
-    subsets: ["latin"],
-})
+    className: "font-sans",
+}
 
-export const BenthamSerif = Kaisei_Opti({
+export const BenthamSerif = {
     variable: "--font-titulos",
-    weight: ["400", "500", "700"],
-    subsets: ["latin"],
-})
+    className: "font-serif",
+}
 
-export const breeSerif = Bree_Serif({
+export const breeSerif = {
     variable: "--font-bree-serif",
-    subsets: ["latin"],
-    weight: ["400"],
-})
+    className: "font-serif",
+}
