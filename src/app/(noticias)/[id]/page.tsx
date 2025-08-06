@@ -8,6 +8,7 @@ import { formatDate } from "@/lib/formatDate"
 import type { Metadata, ResolvingMetadata } from "next"
 import CopyToClipboard from "@/components/CopyToClipboard"
 import { API_ENDPOINTS } from "@/lib/api"
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
     params,
@@ -16,7 +17,15 @@ export async function generateMetadata({
 }, parent: ResolvingMetadata): Promise<Metadata> {
     const id = (await params).id
     const data = await fetch(API_ENDPOINTS.fetchPostById(id));
-    const post = await data.json()
+    const json = await data.json();
+
+    if (json.status !== "success" || !json.data) {
+        //throw new Error("Error al obtener la entrada: " + (json.message || "Desconocido"));
+        notFound();
+    }
+    const post = json.data;
+    
+    //console.log("Post fetched successfully:", post);
     
     const previousImages = (await parent).openGraph?.images || []
 
@@ -45,20 +54,19 @@ export default async function Page({
     params: Promise<{ id: string }>
 }) {
     const id = (await params).id
-    
     const data = await fetch(API_ENDPOINTS.fetchPostById(id));
-    const text = await data.text();
-    let post;
-    try {
-        post = JSON.parse(text);
-        console.log("Post fetched successfully:", post);
-        
-    } catch {
-        throw new Error("La API no devolvió JSON válido: " + text);
+    const json = await data.json();
+
+    if (json.status !== "success" || !json.data) {
+        //throw new Error("Error al obtener la entrada: " + (json.message || "Desconocido"));
+        notFound();
     }
     
+    const post = json.data;
 
-    const postUrl = `https://trapichedigital.com.mx/noticias/${id}`;
+    //console.log("Post fetched successfully:", post);
+
+    const postUrl = `https://trapichedigital.com.mx/${id}`;
     
     return (
         <Section>
