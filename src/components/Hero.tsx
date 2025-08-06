@@ -60,10 +60,11 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
 
     return (
         <>
-        <Carousel opts={{align: "start", loop: true,}} plugins={[Autoplay({delay: 10000,}),]} className={styles.heroCarrusel} setApi={setApi}>
-            <CarouselContent className={`${styles.heroCarrusel} ml-0`}>
+        <Carousel opts={{align: "start", loop: true,}} plugins={[Autoplay({delay: 10000,}),]} className={`${styles.heroCarrusel} `} setApi={setApi}>
+            <CarouselContent className={`${styles.heroCarrusel} ml-0 `}>
                 {posts.map((post, index) => (
-                    <CarouselItem key={index} className={`${styles.heroCarrusel} pl-0 px-1 md:px-4`}>
+                    <CarouselItem key={index} className={`${styles.heroCarrusel} pl-0 `}>
+                        {/*isMobile ? <></> : <Link href={`/${post.id_entrada}`} scroll = {true}><h1 className="px-2 text-left uppercase animate-fade-up animate-delay-500">{post.titulo}</h1></Link>*/}
                         {isMobile ? (
                             <div className={styles.hero}>
                                 <div className={styles.heroMobileWrapper}>
@@ -80,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                     </Link>
 
                                     <div className={styles.heroMobileInformation}>
-                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
+                                        {<Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>}
                                         <Link href={`/${post.id_entrada}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
                                         <div className='my-4'>
                                             <p className='text-sm text-zinc-500'><span className=''>Por </span> {post.autor}</p>
@@ -95,14 +96,15 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                             <div className={styles.hero}>
                                 <div className={styles.heroWrapper}>
                                     <div className={styles.heroInformation}>
-                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>
-                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h2 className='mt-4'>{post.subtitulo}</h2></Link>
+                                        {<Link href={`/${post.id_entrada}`} className="mb-4" scroll = {true}><h1>{post.titulo}</h1></Link>}
+                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
                                         
-                                        {/*post.resumen*/}
+                                        
                                         <div className={styles.heroDetails}>
                                             <p className='text-base mr-4 text-zinc-500'><span className=''>Por</span> {post.autor}</p>
                                             <p className='text-base text-zinc-500'><span className=''> </span> {formatDate(post.created_at)}</p>
                                         </div>
+                                        {/*post.resumen*/}
                                         <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                         
                                     </div>

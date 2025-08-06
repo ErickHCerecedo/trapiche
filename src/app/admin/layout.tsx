@@ -7,9 +7,7 @@ export default function RootLayout({
 }>) {
     return (
         <>
-        {/* <SessionProvider> */}
-            {children}
-        {/* </SessionProvider> */}     
+            {children}   
         </>
     )
 }

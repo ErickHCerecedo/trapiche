@@ -6,7 +6,7 @@ import Image from "next/image"
 import styles from "@/styles/PostItem.module.css"
 import { formatDate } from "@/lib/formatDate"
 import { GrLinkNext } from "react-icons/gr"
-import { Separator } from "@/components/ui/separator"
+//import { Separator } from "@/components/ui/separator"
 
 interface PostItemProps {
     id_entrada: string;
@@ -38,7 +38,7 @@ const PostItem: React.FC<PostItemProps> = ({
                             alt={title}
                             width={200}
                             height={200}
-                            quality={80}
+                            quality={100}
                             className={`${styles.postItemImage} group-hover:scale-110`}
                         />
                     </Link>
@@ -46,10 +46,10 @@ const PostItem: React.FC<PostItemProps> = ({
                 
                 <div className={styles.postItemInformation}>
                     <Link href={`/${id_entrada}`} scroll={true}>
-                        <h1>{title}</h1>
+                        <h1 className="text-2xl line-clamp-4">{title}</h1>
                     </Link>
-                    <h2>{subtitle}</h2>
-                    <div className={styles.postItemDetails}>
+                    {<h2 className="hidden">{subtitle}</h2>}
+                    <div className={`${styles.postItemDetails} md:hidden`}>
                         <p className="text-base text-zinc-500"><span className="">Por </span> {autor}</p>
                         <p className="text-base md:mx-4 text-zinc-500"><span className=""></span> {formatDate(date)}</p>
                     </div>
@@ -57,7 +57,7 @@ const PostItem: React.FC<PostItemProps> = ({
                     <Link href={`/${id_entrada}`}  className={`${styles.postItemButton} group`} scroll={true}>Leer <GrLinkNext className={`${styles.postItemButtonIcon} group-hover:translate-x-4`}/></Link>
                 </div>
             </div>
-        <Separator orientation="horizontal" className="h-[1px] my-0 bg-black"/>
+        {/*<Separator orientation="horizontal" className="h-[2px] my-0 bg-black"/>*/}
         </div>
     )
 }

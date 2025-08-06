@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import PostList from "@/components/PostList";
 import Hero from '@/components/Hero';
 import { API_ENDPOINTS } from '@/lib/api';
+import { Separator } from "@/components/ui/separator"
 
 interface Post {
     id_entrada: string;
@@ -33,10 +34,11 @@ const Home: React.FC<NoticiasProps> = async () => {
 
     return (
         <Section>
-            <h1 className="w-full text-4xl md:text-7xl font-serif text-left font-semibold uppercase animate-fade-up animate-delay-500">
+            {<h1 className="w-full text-4xl md:text-7xl font-serif text-left font-semibold uppercase animate-fade-up animate-delay-500">
                 Las Noticias Más {typeof window !== "undefined" && window.innerWidth > 768 && <br />} Relevantes al Instante
-            </h1>
+            </h1>}
             <Hero posts={heroPosts} />
+            <Separator orientation="horizontal" className="h-[2px] mb-0 mt-8 bg-black"/>
             <PostList posts={posts} />
         </Section>
     );

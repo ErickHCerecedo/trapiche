@@ -1,21 +1,8 @@
-"use client"
-
-import React from "react"
-//import { useRouter } from "next/navigation";
-//import { useEffect } from "react";
-
-const Page: React.FC = () => {
-    
-    //const router = useRouter();
-
-    return (
-        <div>
-            <h1>Admin Portal</h1>
-            <p>Welcome user</p>
-            <button onClick={() => alert('Sign Out clicked')}>Sign Out</button>
-            {/* Aquí puedes agregar las funcionalidades para crear, editar y eliminar publicaciones */}
-        </div>
-    )
+export default function Page() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh]">
+      <h1 className="text-2xl font-bold mb-2">Bienvenido al panel administrativo</h1>
+      <p className="text-muted-foreground">Selecciona una opción del menú para comenzar.</p>
+    </div>
+  )
 }
-
-export default Page;

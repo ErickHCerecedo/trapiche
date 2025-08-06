@@ -3,11 +3,11 @@
 }
 
 .postListNews {
-    @apply w-full md:w-[70%] mt-12 md:mt-0; 
+    @apply w-full md:w-[75%] mt-12 md:mt-0; 
 }
 
 .postListMagazine{
-    @apply md:sticky w-full md:w-1/4  h-1/2 top-28;
+    @apply md:sticky w-full md:w-1/5  h-1/2 top-28;
 }
 
 .postListImageContainer {

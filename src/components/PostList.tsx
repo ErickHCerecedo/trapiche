@@ -44,7 +44,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
             {isMobile ? (
                 <div className={styles.postListWrapper}>
                     <div className={styles.postListMagazine}>
-                        <h2 className="text-5xl">Revista</h2>
+                        <h2 className="text-4xl">Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
                         <Link href="/revista" scroll={true}>
@@ -64,7 +64,7 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
                     </div>
                     
                     <div className={styles.postListNews}>
-                        <h2 className="text-5xl">Noticias Recientes</h2>
+                        <h2 className="text-4xl">Noticias Recientes</h2>
                         {posts.map((post, index) => (
                             <div key={index}>
                                 <PostItem
@@ -83,25 +83,27 @@ const PostList:  React.FC<PostListProps> = ({ posts }) => {
             ):(      
                 <div className={styles.postListWrapper}>
                     <div className={styles.postListNews}>
-                        <h2 className="text-4xl">Noticias Recientes</h2>
+                        <h2 className="text-2xl">Noticias Recientes</h2>
                         <h1 className='my-4'></h1>
-                        {posts.map((post, index) => (
-                            <div key={index} >
-                                <PostItem
-                                    id_entrada={post.id_entrada}
-                                    title={post.titulo}
-                                    subtitle={post.subtitulo}
-                                    autor={post.autor}
-                                    date={post.created_at}
-                                    image={post.portada}
-                                    content={post.resumen}
-                                />
-                            </div>
-                        ))}
+                        <div className="flex flex-wrap justify-between">
+                            {posts.map((post, index) => (
+                                <div key={index} className="w-[32%]">
+                                    <PostItem
+                                        id_entrada={post.id_entrada}
+                                        title={post.titulo}
+                                        subtitle={post.subtitulo}
+                                        autor={post.autor}
+                                        date={post.created_at}
+                                        image={post.portada}
+                                        content={post.resumen}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className={styles.postListMagazine}>
-                        <h2 className="text-4xl">Revista</h2>
+                        <h2 className="text-2xl">Revista</h2>
                         <h1 className='my-4'>02 / 2025</h1>
 
                         <Link href="/revista" scroll={true}>

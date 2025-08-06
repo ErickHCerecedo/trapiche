@@ -11,13 +11,9 @@ export default function RootLayout({
 }>) {
     return (
         <>
-        {/* <html lang="en">
-            <body className={`${RobotoSans.variable} ${BenthamSerif.variable} ${breeSerif.variable} antialiased`}> */}
-                <Header />
-                    {children}
-                <Footer />
-            {/*  </body>
-        </html> */}
+            <Header />
+                {children}
+            <Footer />
         </>
     )
 }

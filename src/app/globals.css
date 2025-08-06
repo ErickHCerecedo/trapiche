@@ -14,10 +14,10 @@
         @apply font-sans font-medium;
     }
     h2 {
-        @apply font-sans text-xl md:text-3xl font-light normal-case;
+        @apply font-sans text-xl md:text-2xl font-light normal-case;
     }
     p {
-        @apply font-sans text-xl font-normal;
+        @apply font-sans text-xl md:text-2xl font-normal;
     }
     button,
     input,
