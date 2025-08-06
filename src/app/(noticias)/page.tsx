@@ -7,7 +7,16 @@ import { Separator } from "@/components/ui/separator"
 
 async function fetchPosts() {
     const response = await fetch(API_ENDPOINTS.fetchPosts);
-    const list = await response.json();
+    const text = await response.text();
+    let list;
+    try {
+        list = JSON.parse(text);
+    } catch {
+        // Puedes devolver un array vacío o lanzar un error personalizado
+        return { heroPosts: [], posts: [] };
+        // O: throw new Error("La API no devolvió JSON válido: " + text);
+    }
+    //const list = await response.json();
     const reversedData = list.reverse();
     const heroPosts = reversedData.slice(0, 3);
     const posts = reversedData.slice(3);
