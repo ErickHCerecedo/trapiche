@@ -4,7 +4,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8
 
 const API_ENDPOINTS = {
     fetchPosts: `${API_BASE_URL}/api_post_index.php`,
-    fetchPostById: (id: string) => `${API_BASE_URL}/api_post_read.php?id=${id}`,
+    fetchPostById: (id: string) => `${API_BASE_URL}/api_post_read.php?id_entrada=${id}`,
     createPost: `${API_BASE_URL}/api_post_create.php`,
     updatePost: `${API_BASE_URL}/api_post_update.php`,
     deletePost: (id: string) => `${API_BASE_URL}/api_post_delete.php?id=${id}`,

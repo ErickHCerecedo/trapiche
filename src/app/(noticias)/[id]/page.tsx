@@ -27,7 +27,7 @@ export async function generateMetadata({
             title: post.titulo,
             description: post.resumen || post.subtitulo,
             images: [post.portada, ...previousImages],
-            url: `https://trapichedigital.com.mx/noticias/${id}`,
+            url: `https://trapichedigital.com.mx/${id}`,
             type: "article",
         },
         twitter: {
@@ -46,8 +46,16 @@ export default async function Page({
 }) {
     const id = (await params).id
     
-    const data = await fetch(`https://api.trapichedigital.com.mx/api/api_post_read.php?id_entrada=${id}`)
-    const post = await data.json()
+    const data = await fetch(API_ENDPOINTS.fetchPostById(id));
+    const text = await data.text();
+    let post;
+    try {
+        post = JSON.parse(text);
+        console.log("Post fetched successfully:", post);
+        
+    } catch {
+        throw new Error("La API no devolvió JSON válido: " + text);
+    }
     
 
     const postUrl = `https://trapichedigital.com.mx/noticias/${id}`;
