@@ -15,7 +15,7 @@ export function LoginForm({
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
 
-    const [credentials, setCredentials] = useState({email: "josemaen@trapichedigital.com.mx", password: "adminTrapiche2025"});
+    const [credentials, setCredentials] = useState({email: "", password: ""});
     const [error, setError] = useState("");
     const router = useRouter();
 
