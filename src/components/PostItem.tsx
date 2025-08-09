@@ -38,7 +38,7 @@ const PostItem: React.FC<PostItemProps> = ({
                             alt={title}
                             width={200}
                             height={200}
-                            quality={100}
+                            quality={80}
                             className={`${styles.postItemImage} group-hover:scale-110`}
                         />
                     </Link>

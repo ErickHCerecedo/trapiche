@@ -114,7 +114,7 @@ export default async function Page({
                     {/* <p className={styles.articuloBtnShare} >Compartenos por: </p> */}
                     {/* Facebook */}
                     <Link href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`} target="_blank" rel="noopener noreferrer" className={styles.articuloBtnShare}>
-                        <Image src="/facebook.svg" alt="Facebook" width={25} height={25} />
+                        <Image src="/facebook.svg" alt="Facebook" width={25} height={25} quality={80}/>
                     </Link>
 
                     {/* Instagram (No permite compartir enlaces, redirecciona al perfil) */}
@@ -124,7 +124,7 @@ export default async function Page({
 
                     {/* WhatsApp */}
                     <Link href={`https://api.whatsapp.com/send?text=${encodeURIComponent(post.titulo + " " + postUrl)}`} target="_blank" rel="noopener noreferrer" className={styles.articuloBtnShare}>
-                        <Image src="/whatsapp.svg" alt="WhatsApp" width={25} height={25} />
+                        <Image src="/whatsapp.svg" alt="WhatsApp" width={25} height={25} quality={80}/>
                     </Link>
 
                     <CopyToClipboard postUrl={postUrl} />
@@ -133,7 +133,7 @@ export default async function Page({
 
 
                 <div className={styles.articuloImageContainer}>
-                    <Image src={post.portada} alt={post.titulo}  width={1000} height={800} className={styles.articuloImage} />
+                    <Image src={post.portada} alt={post.titulo}  width={1000} height={800} quality={80} className={styles.articuloImage} />
                 </div>
 
 
