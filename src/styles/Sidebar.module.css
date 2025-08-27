@@ -15,5 +15,9 @@
 }
 
 .sidebarMenuButton {
-    @apply text-xl;
+    @apply text-lg hover:bg-neutral-300 focus:bg-neutral-400 w-full flex items-center space-x-2 px-4 py-2 rounded transition-all duration-300 ease-in-out;
+}
+
+.sidebarFooter {
+    @apply flex items-center justify-between transition-all duration-200 ease-in-out  rounded-lg p-2 -m-2;
 }

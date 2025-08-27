@@ -1,0 +1,55 @@
+.paginationContainer {
+    @apply flex flex-col items-center space-y-6 mt-12 mb-8;
+}
+
+.paginationInfo {
+    @apply text-lg text-zinc-600 text-center font-light;
+}
+
+.paginationControls {
+    @apply flex items-center space-x-3;
+}
+
+.paginationButton {
+    @apply w-fit mx-auto text-lg font-light text-white bg-black hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-950 transition-all duration-300 ease-in-out flex items-center px-4 py-2;
+}
+
+.paginationButtonDisabled {
+    @apply flex items-center px-4 py-2 text-lg font-light text-zinc-400 bg-zinc-200 rounded cursor-not-allowed;
+}
+
+.paginationNumbersContainer {
+    @apply hidden sm:flex items-center space-x-2;
+}
+
+.paginationNumberButton {
+    @apply w-9 h-9 flex items-center justify-center text-lg font-normal rounded-full border-2 transition-all duration-300 ease-in-out;
+}
+
+.paginationNumberButtonActive {
+    @apply bg-black text-white border-black hover:bg-black;
+}
+
+.paginationNumberButtonInactive {
+    @apply bg-transparent text-black border-black hover:bg-red-950 hover:text-white hover:border-red-950;
+}
+
+.paginationMobileIndicator {
+    @apply sm:hidden w-12 h-12 flex items-center justify-center text-lg font-normal bg-black text-white rounded-full;
+}
+
+.paginationIcon {
+    @apply w-5 h-5;
+}
+
+.paginationIconLeft {
+    @apply w-5 h-5 mr-1;
+}
+
+.paginationIconRight {
+    @apply w-5 h-5 ml-1;
+}
+
+.paginationText {
+    @apply hidden sm:inline;
+}

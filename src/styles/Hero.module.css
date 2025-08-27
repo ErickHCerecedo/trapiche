@@ -7,7 +7,7 @@
 }
 
 .heroWrapper {
-    @apply h-[80vh] flex p-2  bg-[#f6e5d5];
+    @apply h-[60vh] 3xl:h-[60vh] flex p-2  /* bg-[#f6e5d5] */;
 }
 
 .heroInformation {
@@ -27,7 +27,7 @@
 }
 
 .heroImageContainer {
-    @apply w-2/3 h-full relative cursor-pointer overflow-hidden shadow-md;
+    @apply w-2/3 h-full relative cursor-pointer rounded-lg overflow-hidden shadow-md;
 }
 
 .heroImage {
@@ -35,11 +35,11 @@
 }
 
 .heroMobileWrapper {
-    @apply my-4  bg-[#f6e5d5];
+    @apply my-4 mx-1 /* bg-[#f6e5d5] */;
 }
 
 .heroMobileImageContainer {
-    @apply w-full h-[30vh] overflow-hidden relative;
+    @apply w-full h-[30vh] rounded-lg overflow-hidden relative;
 }
 
 .heroMobileInformation {

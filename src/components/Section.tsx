@@ -9,8 +9,8 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ children }) => {
     return (
         <div className="w-screen min-h-screen">
-        <div className="w-full min-h-screen h-full px-6 md:px-10 pt-20 md:pt-28 pb-10">
-        <div className="max-w-[80rem] 3xl:max-w-[95rem] h-auto py-4 md:py-8 mx-auto border-x-2 border-transparent flex flex-col items-start justify-start">
+        <div className="w-full min-h-screen h-full px-6 md:px-10 pt-20 md:pt-28 pb-10 overflow-hidden">
+        <div className="max-w-[80rem] 3xl:max-w-[100rem] h-auto py-4 md:py-8 mx-auto border-x-2 border-transparent flex flex-col items-start justify-start overflow-hidden">
         {children}
         </div>
         </div>
