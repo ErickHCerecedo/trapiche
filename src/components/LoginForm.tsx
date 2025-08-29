@@ -28,7 +28,6 @@ export function LoginForm({
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(API_ENDPOINTS.login);
         
         const response = await fetch(API_ENDPOINTS.login, {
             method: 'POST',

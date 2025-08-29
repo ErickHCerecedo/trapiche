@@ -8,7 +8,7 @@ import PostItem from "@/components/PostItem"
 import Pagination from "@/components/Pagination"
 
 import styles from "@/styles/PostList.module.css"
-import { GrLinkNext } from "react-icons/gr"
+import { ChevronRight } from 'lucide-react';
 
 interface Post {
     slug: string;
@@ -76,7 +76,7 @@ const PostList:  React.FC<PostListProps> = ({ posts, pagination /* , currentPage
                             </div>
                         </Link>
                         
-                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={true}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
+                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={true}>Leer ahora <ChevronRight className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
                     </div>
                     
                     <div className={styles.postListNews}>
@@ -156,7 +156,7 @@ const PostList:  React.FC<PostListProps> = ({ posts, pagination /* , currentPage
                             </div>
                         </Link>
                         
-                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={true}>Leer ahora <GrLinkNext className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
+                        <Link href="/revista"  className={`${styles.postListButton} group`} scroll={true}>Leer ahora <ChevronRight className={`${styles.postListButtonIcon} group-hover:translate-x-4`}/></Link>
                     </div>
                 </div> 
             )}

@@ -10,7 +10,7 @@ import Insignia from "@/components/ui/insignia"
 
 import styles from "@/styles/Hero.module.css"
 import { formatDate } from "@/lib/formatDate"
-import { GrLinkNext } from "react-icons/gr"
+import { ChevronRight } from 'lucide-react';
 import { FaCircle } from "react-icons/fa";
 
 interface Post {
@@ -90,11 +90,11 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                         <Link href={`/${post.slug}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
                                         <Insignia text={post.categoria} className="my-2" />
                                         <div className='my-4'>
-                                            <p className='text-sm text-zinc-500'><span className=''>Por </span> {post.autor}</p>
+                                            <p className='text-sm text-zinc-500'><span className=''>Por </span> <Link href={`https://www.facebook.com/Trapichedigitaloficial`} scroll={true} className="text-neutral-800 font-bree">{/*post.autor*/} Trapiche Digital</Link></p>
                                             <p className='text-sm text-zinc-500'><span className=''></span> {formatDate(post.created_at)}</p>
                                         </div>
                                         {/*post.resumen*/}
-                                        <Link href={`/${post.slug}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        <Link href={`/${post.slug}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <ChevronRight className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                     </div>
                                 </div>
                             </div>           
@@ -107,11 +107,11 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                                         <Insignia text={post.categoria} className="my-2" />
                                         
                                         <div className={styles.heroDetails}>
-                                            <p className='text-base mr-4 text-zinc-500'><span className=''>Por</span> {post.autor}</p>
+                                            <p className='text-base mr-4 text-zinc-500'><span className=''>Por</span> <Link href={`https://www.facebook.com/Trapichedigitaloficial`} scroll={true} className="text-neutral-800 font-bree">{/*post.autor*/} Trapiche Digital</Link></p>
                                             <p className='text-base text-zinc-500'><span className=''> </span> {formatDate(post.created_at)}</p>
                                         </div>
                                         {/*post.resumen*/}
-                                        <Link href={`/${post.slug}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        <Link href={`/${post.slug}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <ChevronRight className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                         
                                     </div>
 

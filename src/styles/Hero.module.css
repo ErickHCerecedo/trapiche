@@ -19,7 +19,7 @@
 }
 
 .heroButtonIcon {
-    @apply mx-2 transition-transform duration-500 ease-in-out transform;
+    @apply mx-2 transition-transform duration-500 ease-in-out transform text-red-800;
 }
 
 .heroDetails {

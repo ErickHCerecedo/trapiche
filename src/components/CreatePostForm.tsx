@@ -170,7 +170,9 @@ export function CreatePostForm({
             tags: newPost.tags.join(', '), 
             estado: newPost.estado, 
         };
-        
+
+        console.log("Post data: ", postData);
+
         try {
             let response, result;
             if (initialData && initialData.id) {
@@ -311,7 +313,6 @@ export function CreatePostForm({
                                                 id="categoria"
                                                 type="text"
                                                 placeholder="Ej: San Felipe Orizatlán, Molango, etc."
-                                                required
                                                 className={`${styles.loginFormInput} ${errors.categoria ? 'border-red-500' : 'border-gray-300'}`}
                                                 value={newPost.categoria}
                                                 onChange={handleInputChange}
@@ -445,7 +446,7 @@ export function CreatePostForm({
                         <Button 
                             type="submit" 
                             className={`${styles.loginFormButton} flex items-center justify-center gap-2 px-8 py-3 text-lg font-medium transition-all duration-200 hover:shadow-lg`}
-                            disabled={!newPost.titulo || !newPost.contenido || !newPost.categoria || isSubmitting}
+                            disabled={!newPost.titulo || !newPost.contenido || isSubmitting}
                         >
                             {isSubmitting
                                 ? (initialData && initialData.id ? "Actualizando..." : "Creando...")

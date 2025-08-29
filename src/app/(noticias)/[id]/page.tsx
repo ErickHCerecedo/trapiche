@@ -157,7 +157,7 @@ export default async function Page({
                             />
                         )}
                     <div className={styles.articuloDetails}>
-                        <p className="text-base text-zinc-400"><span className="">Por</span> {post.autor}</p>
+                        <p className="text-base text-zinc-400"><span className="">Por</span> <Link href={`https://www.facebook.com/Trapichedigitaloficial`} scroll={true} className="text-neutral-800 font-bree">{/*post.autor*/} Trapiche Digital</Link></p>
                         <p className="text-base md:ml-8 text-zinc-400"><span className=""></span> {formatDate(post.created_at)}</p>
                     </div>
 
