@@ -1,6 +1,6 @@
 // Determina la URL base según el entorno (desarrollo o producción)
 //'https://api.trapichedigital.com.mx'
-const API_BASE_URL = /* process.env.NEXT_PUBLIC_API_BASE_URL  || */ 'http://localhost:8101/api' ;
+const API_BASE_URL =  process.env.NEXT_PUBLIC_API_BASE_URL /* ||  'http://localhost:8101/api' */;
 
 const API_ENDPOINTS = {
     // ============================================================================

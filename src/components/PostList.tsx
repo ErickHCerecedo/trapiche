@@ -69,7 +69,7 @@ const PostList:  React.FC<PostListProps> = ({ posts, pagination /* , currentPage
                                     alt="Revista"
                                     width={200}
                                     height={100}
-                                    quality={80}
+                                    quality={75}
                                     loading="lazy"
                                     className={`${styles.postListImage} group-hover:scale-110`}
                                 />
@@ -145,11 +145,11 @@ const PostList:  React.FC<PostListProps> = ({ posts, pagination /* , currentPage
                         <Link href="/revista" scroll={true}>
                             <div className={`${styles.postListImageContainer} group`} >
                                 <Image
-                                    src="https://res.cloudinary.com/da6tubbm8/image/upload/v1756857715/RevistaAgosto_xozwbt.png"
+                                    src="https://res.cloudinary.com/da6tubbm8/image/upload/v1767336395/TRAPICHE_DICIEMBRE_bxpapm.png"
                                     alt="Revista"
                                     width={200}
                                     height={100}
-                                    quality={80}
+                                    quality={75}
                                     loading="lazy"
                                     className={`${styles.postListImage} group-hover:scale-110`}
                                 />
