@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -12,7 +12,19 @@ import styles from "@/styles/Header.module.css"
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const router = useRouter()
+
+    // Detectar scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY
+            setIsScrolled(scrollTop > 50) // Cambiar después de 50px de scroll
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     function getMenuClasses() {
         const menuClasses = [
@@ -37,11 +49,28 @@ const Header: React.FC = () => {
     }
 
     return (
-        <header className={`${styles.header}`}>
+        <header className={`${styles.header} ${
+            isScrolled 
+                ? 'h-20 md:h-18' 
+                : 'h-20 md:h-28'
+        }`}>
             <div className={styles.headerWrapper}>
                 <div className={styles.headerNavbar}>
-                    <div className="logo">
-                        <Image src="/logo-main.png" width={200} height={100} quality={80} alt="Trapiche" className={styles.headerLogo} />
+                    <div className={`${styles.headerLogo} ${
+                        isScrolled 
+                            ? 'w-40 md:w-40' 
+                            : 'w-40 md:w-52'
+                    }`}>
+                        <Link href="/">
+                            <Image 
+                                src="/logo-main.png" 
+                                width={200} 
+                                height={100} 
+                                quality={100} 
+                                alt="Trapiche" 
+                                className={`${styles.headerLogo} transition-all duration-300 ease-in-out`} 
+                            />
+                        </Link>
                     </div>
 
                     <div className={styles.headerList}>

@@ -7,9 +7,13 @@
 }
 
 .loginFormInput {
-    @apply text-lg font-normal;
+    @apply text-lg font-normal border border-black focus:ring-transparent;
 }
 
 .loginFormButton {
-    @apply text-lg font-light;
+    @apply w-fit mx-auto text-lg font-light text-white bg-black hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-950 transition-all duration-300 ease-in-out;
+}
+
+.loginFormTextArea {
+    @apply text-lg font-normal border border-black focus:ring-transparent;
 }

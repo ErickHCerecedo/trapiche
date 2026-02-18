@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
                 hostname: 'trapichedigital.com.mx',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+                pathname: '/**',
+            },
         ],
     }
 }

@@ -38,11 +38,14 @@ export function LoginForm({
             body: JSON.stringify(credentials),
         });
 
+        const data = await response.json();
+        console.log(data);
+
         if (response.ok) {
             router.push('/admin')
         } else {
-            const errorData = await response.json();
-            setError(errorData.message || "Error al iniciar sesión");
+            //const errorData = await response.json();
+            setError(data.message || "Error al iniciar sesión");
         }
     };
 
@@ -66,11 +69,9 @@ export function LoginForm({
                                 />
                             </div>
                         </a>
-                        <h1>
-                            <span>Bienvenido de vuelta</span>
-                        </h1>
                         <div className="text-center">
                             Inicie sesión al sitio administrativo de <br /> Trapiche Digital.
+                            {error && <div className="text-lg text-red-900">{error}</div>}
                         </div>
                     </div>
                     <div className="flex flex-col gap-6">
@@ -102,9 +103,9 @@ export function LoginForm({
                             onChange={handleInputChange}
                             />
                         </div>
-                        {error && <p className="text-red-500">{error}</p>}
+                        
                         <Button type="submit" className={`w-full ${styles.loginFormButton}`}>
-                            Login
+                            Iniciar Sesión
                         </Button>
                     </div>
                 </div>

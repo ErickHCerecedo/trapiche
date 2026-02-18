@@ -3,19 +3,21 @@
 import React, { useState, useEffect } from "react"
 
 import Link from "next/link"
-import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
+import MediaDisplay from "@/components/MediaDisplay"
+import Insignia from "@/components/ui/insignia"
 
 import styles from "@/styles/Hero.module.css"
 import { formatDate } from "@/lib/formatDate"
-import { GrLinkNext } from "react-icons/gr"
+import { ChevronRight } from 'lucide-react';
 import { FaCircle } from "react-icons/fa";
 
 interface Post {
-    id_entrada: string;
+    slug: string;
     titulo: string;
     subtitulo: string;
+    categoria: string;
     portada: string;
     resumen: string;
     autor: string;
@@ -68,27 +70,31 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                         {isMobile ? (
                             <div className={styles.hero}>
                                 <div className={styles.heroMobileWrapper}>
-                                    <Link href={`/${post.id_entrada}`} scroll = {true}>
+                                    <Link href={`/${post.slug}`} scroll = {true}>
                                         <div className={`${styles.heroMobileImageContainer} group`}>
-                                            <Image
+                                            <MediaDisplay
                                                 src={post.portada}
                                                 alt={post.titulo}
                                                 width={500}
                                                 height={500}
+                                                quality={80}
                                                 className={`${styles.heroImage} group-hover:scale-110`}
+                                                containerClassName="w-full h-full"
+                                                playable={false}
                                             />
                                         </div>
                                     </Link>
 
                                     <div className={styles.heroMobileInformation}>
-                                        {<Link href={`/${post.id_entrada}`} scroll = {true}><h1>{post.titulo}</h1></Link>}
-                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
+                                        {<Link href={`/${post.slug}`} scroll = {true}><h1>{post.titulo}</h1></Link>}
+                                        <Link href={`/${post.slug}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
+                                        <Insignia text={post.categoria} className="my-2" />
                                         <div className='my-4'>
-                                            <p className='text-sm text-zinc-500'><span className=''>Por </span> {post.autor}</p>
+                                            <p className='text-sm text-zinc-500'><span className=''>Por </span> <Link href={`https://www.facebook.com/Trapichedigitaloficial`} scroll={true} className="text-neutral-800 font-bree">{/*post.autor*/} Trapiche Digital</Link></p>
                                             <p className='text-sm text-zinc-500'><span className=''></span> {formatDate(post.created_at)}</p>
                                         </div>
                                         {/*post.resumen*/}
-                                        <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        <Link href={`/${post.slug}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <ChevronRight className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                     </div>
                                 </div>
                             </div>           
@@ -96,29 +102,32 @@ const Hero: React.FC<HeroProps> = ({ posts }) => {
                             <div className={styles.hero}>
                                 <div className={styles.heroWrapper}>
                                     <div className={styles.heroInformation}>
-                                        {<Link href={`/${post.id_entrada}`} className="mb-4" scroll = {true}><h1>{post.titulo}</h1></Link>}
-                                        <Link href={`/${post.id_entrada}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
-                                        
+                                        {<Link href={`/${post.slug}`} className="mb-4" scroll = {true}><h1>{post.titulo}</h1></Link>}
+                                        <Link href={`/${post.slug}`} scroll = {true}><h2>{post.subtitulo}</h2></Link>
+                                        <Insignia text={post.categoria} className="my-2" />
                                         
                                         <div className={styles.heroDetails}>
-                                            <p className='text-base mr-4 text-zinc-500'><span className=''>Por</span> {post.autor}</p>
+                                            <p className='text-base mr-4 text-zinc-500'><span className=''>Por</span> <Link href={`https://www.facebook.com/Trapichedigitaloficial`} scroll={true} className="text-neutral-800 font-bree">{/*post.autor*/} Trapiche Digital</Link></p>
                                             <p className='text-base text-zinc-500'><span className=''> </span> {formatDate(post.created_at)}</p>
                                         </div>
                                         {/*post.resumen*/}
-                                        <Link href={`/${post.id_entrada}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <GrLinkNext className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
+                                        <Link href={`/${post.slug}`}  className={`${styles.heroButton} group`} scroll = {true}>Leer <ChevronRight className={`${styles.heroButtonIcon} group-hover:translate-x-4`}/></Link>
                                         
                                     </div>
 
                                     
                                     <div className={`${styles.heroImageContainer} group`}>
-                                        <Link href={`/${post.id_entrada}`} scroll = {true}>
-                                        <Image
-                                            src={post.portada}
-                                            alt={post.titulo}
-                                            width={500}
-                                            height={500}
-                                            className={`${styles.heroImage} group-hover:scale-110`}
-                                        />
+                                        <Link href={`/${post.slug}`} scroll = {true}>
+                                            <MediaDisplay
+                                                src={post.portada}
+                                                alt={post.titulo}
+                                                width={500}
+                                                height={500}
+                                                quality={80}
+                                                className={`${styles.heroImage} `}
+                                                containerClassName={'h-full w-full'}
+                                                playable={false}
+                                            />
                                         </Link>
                                     </div> 
                                 </div> 
